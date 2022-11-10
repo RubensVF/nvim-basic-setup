@@ -30,10 +30,25 @@ require('packer').startup(function(use)
 	-- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
 	use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable "make" == 1 }
 
-	use { "github/copilot.vim" } -- Github copilot suggest code 
-	
-	use { 'segeljakt/vim-silicon' }
+	use { "github/copilot.vim" } -- Github copilot suggest code
 
+	use { 'segeljakt/vim-silicon' } -- Screen shot code visual mode
+	use("petertriho/nvim-scrollbar") -- Scrollbar
+	use { "windwp/nvim-ts-autotag" } -- Auto close tags
+	--Use impatient
+	use { "lewis6991/impatient.nvim" }
+
+	use({
+		"folke/noice.nvim", -- Ui plugin for cmdline and notifies
+		requires = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			"MunifTanjim/nui.nvim",
+			-- OPTIONAL:
+			--   `nvim-notify` is only needed, if you want to use the notification view.
+			--   If not available, we use `mini` as the fallback
+			"rcarriga/nvim-notify",
+		}
+	})
 	if is_bootstrap then
 		require('packer').sync()
 	end
