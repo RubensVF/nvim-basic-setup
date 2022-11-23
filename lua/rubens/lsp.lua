@@ -1,3 +1,4 @@
+local M = {}
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
@@ -37,8 +38,7 @@ local on_attach = function(_, bufnr)
 		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 	end, '[W]orkspace [L]ist Folders')
 
-	-- Create a command `:Format` local to the LSP buffer
-	vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+	vim.api.nvim_buf_create_user_command(bufnr, 'Fo', function(_)
 		if vim.lsp.buf.format then
 			vim.lsp.buf.format()
 		elseif vim.lsp.buf.formatting then
@@ -108,3 +108,7 @@ require('lspconfig').sumneko_lua.setup {
 		},
 	},
 }
+
+M.on_attach = on_attach
+M.capabilities = capabilities
+return M

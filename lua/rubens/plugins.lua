@@ -49,6 +49,8 @@ require('packer').startup(function(use)
 			"rcarriga/nvim-notify",
 		}
 	})
+
+	use { "mfussenegger/nvim-jdtls"}
 	if is_bootstrap then
 		require('packer').sync()
 	end

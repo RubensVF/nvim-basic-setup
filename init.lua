@@ -1,9 +1,9 @@
--- Init impatient plugin for faster startup 
+-- Init impatient plugin for faster startup
 require('impatient').enable_profile()
 
 require('rubens.options') --Load first options for notify
 require('noice').setup()
-vim.notify('Hello boos' , 'info', { title = 'Hello' })
+vim.notify('Hello boos', 'info', { title = 'Hello' })
 require('rubens.plugins')
 require('rubens.lsp')
 require('rubens.cmp')
@@ -21,7 +21,7 @@ require('indent_blankline').setup {
 require('nvim-autopairs').setup()
 require('Comment').setup()
 -- -- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et 
+-- vim: ts=2 sts=2 sw=2 et
 
 require('nvim-ts-autotag').setup()
 require('scrollbar').setup()
