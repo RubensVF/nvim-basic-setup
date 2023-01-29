@@ -42,4 +42,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
   group = highlight_group,})
 
-
+vim.opt.swapfile = false
+vim.opt.shiftwidth = 10

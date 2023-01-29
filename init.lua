@@ -12,6 +12,7 @@ require('rubens.telescope')
 require('rubens.treesitter')
 require('rubens.keymaps')
 require('nvim-tree').setup()
+require('rubens.rust')
 -- Enable `lukas-reineke/indent-blankline.nvim`
 -- See `:help indent_blankline.txt`
 require('indent_blankline').setup {

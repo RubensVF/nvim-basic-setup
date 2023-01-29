@@ -51,6 +51,7 @@ require('packer').startup(function(use)
 	})
 
 	use { "mfussenegger/nvim-jdtls"}
+        use 'simrat39/rust-tools.nvim'
 	if is_bootstrap then
 		require('packer').sync()
 	end

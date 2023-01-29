@@ -1,6 +1,7 @@
 local M = {}
+
 -- LSP settings.
---  This function gets run when an LSP connects to a particular buffer.
+--  This function gets rnn when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
 	-- NOTE: Remember that lua is a real programming language, and as such it is possible
 	-- to define small helper and utility functions so you don't have to repeat yourself
@@ -63,6 +64,8 @@ local servers = { 'sumneko_lua', -- Lua
 	'jdtls', -- Java
 	'astro', --Javascript frameworks
 	'dockerls',
+	'clangd',
+	"intelephense"
 }
 
 

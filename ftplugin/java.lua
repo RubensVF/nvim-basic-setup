@@ -12,7 +12,7 @@ local WORKSPACE_PATH = vim.fn.stdpath "data" .. "/workspace/java/"
 
 -- JAVA 17 or grater location 
 local JAVA = "java"
-
+local home = os.getenv "HOME"
 
 -- Operting SYSTEM for jdtls config
 local SYSTEM = "linux"
@@ -42,7 +42,7 @@ local config = {
     "-Declipse.product=org.eclipse.jdt.ls.core.product",
     "-Dlog.protocol=true",
     "-Dlog.level=ALL",
-   -- "-javaagent:",vim.fn.glob( JDTLS_LOCATION .. "/lombok.jar"),
+    "-javaagent:" .. home .. "/.local/share/nvim/mason/packages/jdtls/lombok.jar",-- "-javaagent:",vim.fn.glob( JDTLS_LOCATION .. "/lombok.jar"),
     "-Xms1g",
     "--add-modules=ALL-SYSTEM",
     "--add-opens",
@@ -52,7 +52,7 @@ local config = {
     "-jar",
     vim.fn.glob(JDTLS_LOCATION .. "/plugins/org.eclipse.equinox.launcher_*.jar"),
     "-configuration",
-    JDTLS_LOCATION .. "/config_" .. "win",
+    JDTLS_LOCATION .. "/config_" .. "linux",
     "-data",
     workspace_dir,
   },
